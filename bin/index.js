@@ -4,35 +4,35 @@ var root = 'dist';
 var remove = 'dist/';
 var network = ['index.html'];
 var fallbacks = '{"fallback":[{"file":"/","fallto":"index.html"}]}';
-var exfile = '';
+var exfile = ['app.appcache'];
 
 const fs = require('fs');
 const crypto = require('crypto');
 let strFile = [];
 
-console.log('CACHE MANIFEST');
+////console.log('CACHE MANIFEST');
 strFile.push('CACHE MANIFEST');
 
 
 
 mknetwork = (files) => {
-    console.log('NETWORK:')
+    //console.log('NETWORK:')
     strFile.push('NETWORK:');
     files.forEach(file => {
-        console.log(file);
+        //console.log(file);
         strFile.push(file);
     });
 
 }
 
 mkfallback = (file) => {
-  var obj = JSON.parse(file);
-  console.log('FALLBACK:');
-  strFile.push('FALLBACK:');
-  obj.fallback.forEach(key =>{
-    console.log(key.file+' '+key.fallto);
-    strFile.push(key.file+' '+key.fallto);
- });
+    var obj = JSON.parse(file);
+    //console.log('FALLBACK:');
+    strFile.push('FALLBACK:');
+    obj.fallback.forEach(key => {
+        //console.log(key.file + ' ' + key.fallto);
+        strFile.push(key.file + ' ' + key.fallto);
+    });
 }
 
 
@@ -48,9 +48,9 @@ readfiles = (folder) => {
                         hash.update(buf);
                         var strTmp1 = fullfile.replace(remove, '');
                         var strTmp2 = '# ' + hash.digest('hex');
-                        console.log(strTmp1);
+                        //console.log(strTmp1);
                         strFile.push(strTmp1);
-                        console.log(strTmp2);
+                        //console.log(strTmp2);
                         strFile.push(strTmp2);
                     });
                 } else {
@@ -61,15 +61,26 @@ readfiles = (folder) => {
     });
 
 }
-let count=0;
+
+outFile = (fileArray) => {
+    var strOut = fileArray.join('\n');
+    console.log(strOut);
+    fs.writeFile(root + '/app.appcache', strOut, function(err) {
+        if (err) {
+            return console.log("Error writing file: " + err);
+        }
+    });
+}
+
+let count = 0;
 readfiles(root);
-let timer = setInterval(()=>{
-  if(count===strFile.length){
-    clearInterval(timer);
-    mknetwork(network);
-    mkfallback(fallbacks);
-//    console.log(strFile);
-  }else{
-    count = strFile.length;
-  }
-},250);
+let timer = setInterval(() => {
+    if (count === strFile.length) {
+        clearInterval(timer);
+        mknetwork(network);
+        mkfallback(fallbacks);
+        outFile(strFile);
+    } else {
+        count = strFile.length;
+    }
+}, 250);
