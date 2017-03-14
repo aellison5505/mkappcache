@@ -1,0 +1,29 @@
+{
+  "name": "mkappcache",
+  "version": "0.0.1",
+  "description": "Cli command to create appcache files",
+  "main": "index.js",
+  "bin": {
+    "mkappcache" : "bin/index.js"
+  },
+  "scripts": {
+    "mkappcache" : "node bin/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aellison5505/mkappcache.git"
+  },
+  "keywords": [
+    "appcache",
+    "html",
+    "html5",
+    "cli"
+  ],
+  "author": "Anthony Ellison <aellison@mobilewebapp.net> (www.mobilewebapp.net)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/aellison5505/mkappcache/issues"
+  },
+  "homepage": "https://github.com/aellison5505/mkappcache#readme"
+}
