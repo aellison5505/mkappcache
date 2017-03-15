@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/aellison5505/mkappcache/issues"
   },
-  "homepage": "https://github.com/aellison5505/mkappcache#readme"
+  "homepage": "https://github.com/aellison5505/mkappcache#readme",
+  "dependencies": {
+    "meow": "^3.7.0",
+    "update-notifier": "^2.1.0"
+  }
 }
