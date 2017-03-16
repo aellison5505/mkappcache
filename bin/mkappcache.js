@@ -21,8 +21,7 @@ let config = {
 }
 
 let fileOut = 'app.appcache';
-
-updateNotifier({pkg}).notify();
+updateNotifier({pkg, updateCheckInterval: 1000 * 60 * 60}).notify();
 
 //start string
 let strFile = [];
