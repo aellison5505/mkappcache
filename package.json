@@ -1,14 +1,14 @@
 {
   "name": "mkappcache",
-  "version": "0.0.8",
+  "version": "0.1.1",
   "description": "Cli command to create appcache files",
-  "main": "index.js",
+  "main": "mkappcache.js",
   "bin": {
-    "mkappcache": "bin/index.js"
+    "mkappcache": "bin/mkappcache.js"
   },
   "scripts": {
-    "mkappcache": "node bin/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "mkappcache": "node bin/mkappcache.js",
+    "test": "cd test && mkappcache"
   },
   "repository": {
     "type": "git",
