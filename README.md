@@ -1,17 +1,10 @@
-Cli command to create appcache files
+ClI command to create appcache files
 
 Install:
 
 npm install -g mkappcache
 
-npm install -sav-dev mkappcache
-
-
-Testing:
-
-npm run test
-
-Test should create file: test/dist/app.appcache
+npm install --save-dev mkappcache
 
 Usage:
 
@@ -44,5 +37,3 @@ module.exports = {
     fallbacks : [{get:'/',fallto:'index.html'}],
     exfile : ['app.appcache','mkappcache-config.js']
 }
-
- 
