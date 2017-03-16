@@ -30,10 +30,10 @@ Cli command to create appcache files
 Configuration File Format:
 
 module.exports = {
-    wk_dir : './dist',
-    remove : './dist/',
-    network : ['*'],
-    prepend : '',
-    fallbacks : [{get:'/',fallto:'index.html'}],
-    exfile : ['app.appcache','mkappcache-config.js']
+  wk_dir : './dist',
+  remove : './dist/',
+  network : ['*'],
+  prepend : '',
+  fallbacks : [{get:'/',fallto:'index.html'}],
+  exfile : ['app.appcache','mkappcache-config.js']
 }
