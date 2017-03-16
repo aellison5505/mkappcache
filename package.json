@@ -1,6 +1,6 @@
 {
   "name": "mkappcache",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Cli command to create appcache files",
   "main": "mkappcache.js",
   "bin": {

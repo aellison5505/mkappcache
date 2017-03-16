@@ -22,9 +22,7 @@ let config = {
 
 let fileOut = 'app.appcache';
 
-updateNotifier({
-    pkg: pkg
-}).notify();
+updateNotifier({pkg}).notify();
 
 //start string
 let strFile = [];
