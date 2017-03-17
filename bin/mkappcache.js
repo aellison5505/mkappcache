@@ -59,7 +59,7 @@ const cli = meow(`
 
 main = () => {
     //start program
-    phraseCli();
+    pharseCli();
     //return;
 
     let count = 0;
@@ -77,7 +77,7 @@ main = () => {
 
 }
 
-phraseCli = () => {
+pharseCli = () => {
     var flags = cli.flags;
 
     if (flags.mkconfig) {
