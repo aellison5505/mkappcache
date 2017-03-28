@@ -8,7 +8,7 @@
   },
   "scripts": {
     "mkappcache": "node bin/mkappcache.js",
-    "test": "cd test && mkappcache"
+    "test": "cd test && node ../bin/mkappcache.js"
   },
   "repository": {
     "type": "git",
